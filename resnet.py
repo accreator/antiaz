@@ -4,7 +4,7 @@
 import tensorflow as tf
 import tensorlayer as tl
 import time
-import os.path
+import logging
 import sys
 from data import DATA
 
@@ -13,19 +13,19 @@ def build_network(x, is_train=True, reuse=False):
     with tf.variable_scope("nn", reuse=reuse):
         tl.layers.set_name_reuse(reuse)
         network = tl.layers.InputLayer(x, name='input')
-        network = tl.layers.Conv2d(network, n_filter=128, filter_size=(5, 5), strides=(1, 1), padding='SAME', name='cnn0')
+        network = tl.layers.Conv2d(network, n_filter=64, filter_size=(5, 5), strides=(1, 1), padding='SAME', name='cnn0')
         network = tl.layers.BatchNormLayer(network, name='norm0', act=tf.nn.relu, is_train=is_train)
         for i in range(3):
-            network_ = tl.layers.Conv2d(network, n_filter=128, filter_size=(5, 5), strides=(1, 1), padding='SAME', name='res_cnn1_%s' % i)
+            network_ = tl.layers.Conv2d(network, n_filter=64, filter_size=(5, 5), strides=(1, 1), padding='SAME', name='res_cnn1_%s' % i)
             network_ = tl.layers.BatchNormLayer(network_, act=tf.nn.relu, is_train=is_train, name='res_norm1_%s' % i)
-            network_ = tl.layers.Conv2d(network_, n_filter=128, filter_size=(5, 5), strides=(1, 1), padding='SAME', name='res_cnn2_%s' % i)
+            network_ = tl.layers.Conv2d(network_, n_filter=64, filter_size=(5, 5), strides=(1, 1), padding='SAME', name='res_cnn2_%s' % i)
             network_ = tl.layers.BatchNormLayer(network_, act=tf.nn.relu, is_train=is_train, name='res_norm2_%s' % i)
             network = tl.layers.ElementwiseLayer([network, network_], tf.add, name='res_add_%s' % i)
             
         network = tl.layers.Conv2d(network, n_filter=1, filter_size=(1, 1), strides=(1, 1), padding='SAME', name='cnn1')
         network = tl.layers.BatchNormLayer(network, name='norm1', act=tf.nn.relu, is_train=is_train)
         network = tl.layers.FlattenLayer(network, name='flatten0')
-        network = tl.layers.DenseLayer(network, n_units=128, act = tf.nn.relu, name='relu0')
+        network = tl.layers.DenseLayer(network, n_units=64, act = tf.nn.relu, name='relu0')
         network = tl.layers.DenseLayer(network, n_units=2, act = tf.identity,  name='output')
         return network
 
@@ -38,7 +38,7 @@ def main_test_cnn_layer(N, start_from = -1):
     # Define the batchsize at the begin, you can give the batchsize in x and y_
     # rather than 'None', this can allow TensorFlow to apply some optimizations
     # – especially for convolutional layers.
-    batch_size = 64
+    batch_size = 256
 
     X_val, y_val = db.load_vld()
     X_test, y_test = db.load_tst()
@@ -60,7 +60,7 @@ def main_test_cnn_layer(N, start_from = -1):
     acc_test = tf.reduce_mean(tf.cast(correct_prediction_test, tf.float32))
 
     # train
-    n_epoch = 1500
+    n_epoch = 101
     learning_rate = 0.0001
     print_freq = 5
     checkpoint_freq = 5
@@ -128,6 +128,7 @@ def main_test_cnn_layer(N, start_from = -1):
 
 
 if __name__ == '__main__':
+    logging.basicConfig(filename='resnet.log', level=logging.DEBUG)
     if len(sys.argv) > 1:
         main_test_cnn_layer(9, int(sys.argv[1]))
     else:

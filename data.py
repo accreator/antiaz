@@ -10,20 +10,25 @@ class DATA:
     def gen(self, dataset, size):
         judge = base(self.N)
         judge.count = self.N**2
+        order = []
         for i in range(self.N**2):
             judge.board[i] = i % 2 + 1
+            order += [i]
         datax = []
         datay = []
         for i in range(size):
             shuffle(judge.board)
-            for j in range(self.N**2):
-                if judge.board[j] == (self.N**2-1) % 2 + 1:
-                    judge.unmake(j // self.N, j % self.N)
+            shuffle(order)
+            for k in range(self.N**2):
+                p = order[k]
+                if judge.board[p] == (self.N**2-1) % 2 + 1:
+                    judge.unmake(p // self.N, p % self.N)
                     for k in range(self.N**2):
                         datax += [1 if judge.board[k] == 1 else 0]
                         datax += [1 if judge.board[k] == 2 else 0]
-                    judge.make(j // self.N, j % self.N, (self.N**2-1) % 2 + 1)
+                    judge.make(p // self.N, p % self.N, (self.N**2-1) % 2 + 1)
                     datay += [(-judge.checkwin() + 1)/2]
+                    break
         datax = np.asarray(datax, dtype=np.int8)
         datax = datax.reshape([-1, self.N, self.N, 2])
         datay = np.asarray(datay, dtype=np.int8)
@@ -44,7 +49,7 @@ class DATA:
 
 '''
 data = DATA(9)
-data.gen("trn", 8000)
-data.gen("vld", 1000)
-data.gen("tst", 1000)
+data.gen("trn", 800000)
+data.gen("vld", 100000)
+data.gen("tst", 100000)
 '''
