@@ -1,6 +1,7 @@
 from Coach import Coach
-from othello.OthelloGame import OthelloGame as Game
-from othello.pytorch.NNet import NNetWrapper as nn
+from antiaz.AntiazGame import AntiazGame as Game
+#from antiaz.tensorflow.NNet import NNetWrapper as nn
+from antiaz.pytorch.NNet import NNetWrapper as nn
 from utils import *
 
 args = dotdict({
@@ -21,7 +22,7 @@ args = dotdict({
 })
 
 if __name__=="__main__":
-    g = Game(6)
+    g = Game(9)
     nnet = nn(g)
 
     if args.load_model:
