@@ -1,0 +1,249 @@
+  [TL] InputLayer  nn/input: (256, 9, 9, 2)
+  [TL] Conv2dLayer nn/cnn0: shape:[5, 5, 2, 64] strides:[1, 1, 1, 1] pad:SAME act:identity
+  [TL] BatchNormLayer nn/norm0: decay:0.900000 epsilon:0.000010 act:relu is_train:True
+  [TL] Conv2dLayer nn/res_cnn1_0: shape:[5, 5, 64, 64] strides:[1, 1, 1, 1] pad:SAME act:identity
+  [TL] BatchNormLayer nn/res_norm1_0: decay:0.900000 epsilon:0.000010 act:relu is_train:True
+  [TL] Conv2dLayer nn/res_cnn2_0: shape:[5, 5, 64, 64] strides:[1, 1, 1, 1] pad:SAME act:identity
+  [TL] BatchNormLayer nn/res_norm2_0: decay:0.900000 epsilon:0.000010 act:relu is_train:True
+  [TL] ElementwiseLayer nn/res_add_0: size:(256, 9, 9, 64) fn:add
+  [TL] Conv2dLayer nn/res_cnn1_1: shape:[5, 5, 64, 64] strides:[1, 1, 1, 1] pad:SAME act:identity
+  [TL] BatchNormLayer nn/res_norm1_1: decay:0.900000 epsilon:0.000010 act:relu is_train:True
+  [TL] Conv2dLayer nn/res_cnn2_1: shape:[5, 5, 64, 64] strides:[1, 1, 1, 1] pad:SAME act:identity
+  [TL] BatchNormLayer nn/res_norm2_1: decay:0.900000 epsilon:0.000010 act:relu is_train:True
+  [TL] ElementwiseLayer nn/res_add_1: size:(256, 9, 9, 64) fn:add
+  [TL] Conv2dLayer nn/res_cnn1_2: shape:[5, 5, 64, 64] strides:[1, 1, 1, 1] pad:SAME act:identity
+  [TL] BatchNormLayer nn/res_norm1_2: decay:0.900000 epsilon:0.000010 act:relu is_train:True
+  [TL] Conv2dLayer nn/res_cnn2_2: shape:[5, 5, 64, 64] strides:[1, 1, 1, 1] pad:SAME act:identity
+  [TL] BatchNormLayer nn/res_norm2_2: decay:0.900000 epsilon:0.000010 act:relu is_train:True
+  [TL] ElementwiseLayer nn/res_add_2: size:(256, 9, 9, 64) fn:add
+  [TL] Conv2dLayer nn/cnn1: shape:[1, 1, 64, 1] strides:[1, 1, 1, 1] pad:SAME act:identity
+  [TL] BatchNormLayer nn/norm1: decay:0.900000 epsilon:0.000010 act:relu is_train:True
+  [TL] FlattenLayer nn/flatten0: 81
+  [TL] DenseLayer  nn/relu0: 64 relu
+  [TL] DenseLayer  nn/output: 2 identity
+  [TL] InputLayer  nn/input: (256, 9, 9, 2)
+  [TL] Conv2dLayer nn/cnn0: shape:[5, 5, 2, 64] strides:[1, 1, 1, 1] pad:SAME act:identity
+  [TL] BatchNormLayer nn/norm0: decay:0.900000 epsilon:0.000010 act:relu is_train:False
+  [TL] Conv2dLayer nn/res_cnn1_0: shape:[5, 5, 64, 64] strides:[1, 1, 1, 1] pad:SAME act:identity
+  [TL] BatchNormLayer nn/res_norm1_0: decay:0.900000 epsilon:0.000010 act:relu is_train:False
+  [TL] Conv2dLayer nn/res_cnn2_0: shape:[5, 5, 64, 64] strides:[1, 1, 1, 1] pad:SAME act:identity
+  [TL] BatchNormLayer nn/res_norm2_0: decay:0.900000 epsilon:0.000010 act:relu is_train:False
+  [TL] ElementwiseLayer nn/res_add_0: size:(256, 9, 9, 64) fn:add
+  [TL] Conv2dLayer nn/res_cnn1_1: shape:[5, 5, 64, 64] strides:[1, 1, 1, 1] pad:SAME act:identity
+  [TL] BatchNormLayer nn/res_norm1_1: decay:0.900000 epsilon:0.000010 act:relu is_train:False
+  [TL] Conv2dLayer nn/res_cnn2_1: shape:[5, 5, 64, 64] strides:[1, 1, 1, 1] pad:SAME act:identity
+  [TL] BatchNormLayer nn/res_norm2_1: decay:0.900000 epsilon:0.000010 act:relu is_train:False
+  [TL] ElementwiseLayer nn/res_add_1: size:(256, 9, 9, 64) fn:add
+  [TL] Conv2dLayer nn/res_cnn1_2: shape:[5, 5, 64, 64] strides:[1, 1, 1, 1] pad:SAME act:identity
+  [TL] BatchNormLayer nn/res_norm1_2: decay:0.900000 epsilon:0.000010 act:relu is_train:False
+  [TL] Conv2dLayer nn/res_cnn2_2: shape:[5, 5, 64, 64] strides:[1, 1, 1, 1] pad:SAME act:identity
+  [TL] BatchNormLayer nn/res_norm2_2: decay:0.900000 epsilon:0.000010 act:relu is_train:False
+  [TL] ElementwiseLayer nn/res_add_2: size:(256, 9, 9, 64) fn:add
+  [TL] Conv2dLayer nn/cnn1: shape:[1, 1, 64, 1] strides:[1, 1, 1, 1] pad:SAME act:identity
+  [TL] BatchNormLayer nn/norm1: decay:0.900000 epsilon:0.000010 act:relu is_train:False
+  [TL] FlattenLayer nn/flatten0: 81
+  [TL] DenseLayer  nn/relu0: 64 relu
+  [TL] DenseLayer  nn/output: 2 identity
+  param   0: nn/cnn0/W_conv2d:0   (5, 5, 2, 64)      float32_ref (mean: 0.0004827723605558276, median: 0.0002238339657196775, std: 0.017865624278783798)
+  param   1: nn/cnn0/b_conv2d:0   (64,)              float32_ref (mean: 0.0               , median: 0.0               , std: 0.0               )
+  param   2: nn/norm0/beta:0      (64,)              float32_ref (mean: 0.0               , median: 0.0               , std: 0.0               )
+  param   3: nn/norm0/gamma:0     (64,)              float32_ref (mean: 1.000032901763916 , median: 1.0000842809677124, std: 0.0020351139828562737)
+  param   4: nn/norm0/moving_mean:0 (64,)              float32_ref (mean: 0.0               , median: 0.0               , std: 0.0               )
+  param   5: nn/norm0/moving_variance:0 (64,)              float32_ref (mean: 1.0               , median: 1.0               , std: 0.0               )
+  param   6: nn/res_cnn1_0/W_conv2d:0 (5, 5, 64, 64)     float32_ref (mean: -9.208138362737373e-05, median: -0.00011720425391104072, std: 0.017646608874201775)
+  param   7: nn/res_cnn1_0/b_conv2d:0 (64,)              float32_ref (mean: 0.0               , median: 0.0               , std: 0.0               )
+  param   8: nn/res_norm1_0/beta:0 (64,)              float32_ref (mean: 0.0               , median: 0.0               , std: 0.0               )
+  param   9: nn/res_norm1_0/gamma:0 (64,)              float32_ref (mean: 1.0002762079238892, median: 1.0005676746368408, std: 0.0022262472193688154)
+  param  10: nn/res_norm1_0/moving_mean:0 (64,)              float32_ref (mean: 0.0               , median: 0.0               , std: 0.0               )
+  param  11: nn/res_norm1_0/moving_variance:0 (64,)              float32_ref (mean: 1.0               , median: 1.0               , std: 0.0               )
+  param  12: nn/res_cnn2_0/W_conv2d:0 (5, 5, 64, 64)     float32_ref (mean: -5.0254548114025965e-05, median: -7.19670788384974e-05, std: 0.017557932063937187)
+  param  13: nn/res_cnn2_0/b_conv2d:0 (64,)              float32_ref (mean: 0.0               , median: 0.0               , std: 0.0               )
+  param  14: nn/res_norm2_0/beta:0 (64,)              float32_ref (mean: 0.0               , median: 0.0               , std: 0.0               )
+  param  15: nn/res_norm2_0/gamma:0 (64,)              float32_ref (mean: 0.9999505877494812, median: 1.0000226497650146, std: 0.0021257491316646338)
+  param  16: nn/res_norm2_0/moving_mean:0 (64,)              float32_ref (mean: 0.0               , median: 0.0               , std: 0.0               )
+  param  17: nn/res_norm2_0/moving_variance:0 (64,)              float32_ref (mean: 1.0               , median: 1.0               , std: 0.0               )
+  param  18: nn/res_cnn1_1/W_conv2d:0 (5, 5, 64, 64)     float32_ref (mean: -4.8303507355740294e-05, median: -1.2528807928902097e-05, std: 0.01761496253311634)
+  param  19: nn/res_cnn1_1/b_conv2d:0 (64,)              float32_ref (mean: 0.0               , median: 0.0               , std: 0.0               )
+  param  20: nn/res_norm1_1/beta:0 (64,)              float32_ref (mean: 0.0               , median: 0.0               , std: 0.0               )
+  param  21: nn/res_norm1_1/gamma:0 (64,)              float32_ref (mean: 1.0002423524856567, median: 1.0003337860107422, std: 0.0019109457498416305)
+  param  22: nn/res_norm1_1/moving_mean:0 (64,)              float32_ref (mean: 0.0               , median: 0.0               , std: 0.0               )
+  param  23: nn/res_norm1_1/moving_variance:0 (64,)              float32_ref (mean: 1.0               , median: 1.0               , std: 0.0               )
+  param  24: nn/res_cnn2_1/W_conv2d:0 (5, 5, 64, 64)     float32_ref (mean: 2.492677595000714e-05, median: 3.665089752757922e-05, std: 0.01759764552116394)
+  param  25: nn/res_cnn2_1/b_conv2d:0 (64,)              float32_ref (mean: 0.0               , median: 0.0               , std: 0.0               )
+  param  26: nn/res_norm2_1/beta:0 (64,)              float32_ref (mean: 0.0               , median: 0.0               , std: 0.0               )
+  param  27: nn/res_norm2_1/gamma:0 (64,)              float32_ref (mean: 0.9998117089271545, median: 0.9997894763946533, std: 0.002175661502406001)
+  param  28: nn/res_norm2_1/moving_mean:0 (64,)              float32_ref (mean: 0.0               , median: 0.0               , std: 0.0               )
+  param  29: nn/res_norm2_1/moving_variance:0 (64,)              float32_ref (mean: 1.0               , median: 1.0               , std: 0.0               )
+  param  30: nn/res_cnn1_2/W_conv2d:0 (5, 5, 64, 64)     float32_ref (mean: 1.779375634214375e-05, median: 2.726827733567916e-05, std: 0.017580293118953705)
+  param  31: nn/res_cnn1_2/b_conv2d:0 (64,)              float32_ref (mean: 0.0               , median: 0.0               , std: 0.0               )
+  param  32: nn/res_norm1_2/beta:0 (64,)              float32_ref (mean: 0.0               , median: 0.0               , std: 0.0               )
+  param  33: nn/res_norm1_2/gamma:0 (64,)              float32_ref (mean: 0.9999366998672485, median: 0.9998035430908203, std: 0.0018226269166916609)
+  param  34: nn/res_norm1_2/moving_mean:0 (64,)              float32_ref (mean: 0.0               , median: 0.0               , std: 0.0               )
+  param  35: nn/res_norm1_2/moving_variance:0 (64,)              float32_ref (mean: 1.0               , median: 1.0               , std: 0.0               )
+  param  36: nn/res_cnn2_2/W_conv2d:0 (5, 5, 64, 64)     float32_ref (mean: -1.5009771232143976e-05, median: -7.828510206309147e-06, std: 0.017610572278499603)
+  param  37: nn/res_cnn2_2/b_conv2d:0 (64,)              float32_ref (mean: 0.0               , median: 0.0               , std: 0.0               )
+  param  38: nn/res_norm2_2/beta:0 (64,)              float32_ref (mean: 0.0               , median: 0.0               , std: 0.0               )
+  param  39: nn/res_norm2_2/gamma:0 (64,)              float32_ref (mean: 1.0003095865249634, median: 1.000214695930481 , std: 0.0018723224056884646)
+  param  40: nn/res_norm2_2/moving_mean:0 (64,)              float32_ref (mean: 0.0               , median: 0.0               , std: 0.0               )
+  param  41: nn/res_norm2_2/moving_variance:0 (64,)              float32_ref (mean: 1.0               , median: 1.0               , std: 0.0               )
+  param  42: nn/cnn1/W_conv2d:0   (1, 1, 64, 1)      float32_ref (mean: -0.00462175440043211, median: -0.006143168546259403, std: 0.017541350796818733)
+  param  43: nn/cnn1/b_conv2d:0   (1,)               float32_ref (mean: 0.0               , median: 0.0               , std: 0.0               )
+  param  44: nn/norm1/beta:0      (1,)               float32_ref (mean: 0.0               , median: 0.0               , std: 0.0               )
+  param  45: nn/norm1/gamma:0     (1,)               float32_ref (mean: 1.0001105070114136, median: 1.0001105070114136, std: 0.0               )
+  param  46: nn/norm1/moving_mean:0 (1,)               float32_ref (mean: 0.0               , median: 0.0               , std: 0.0               )
+  param  47: nn/norm1/moving_variance:0 (1,)               float32_ref (mean: 1.0               , median: 1.0               , std: 0.0               )
+  param  48: nn/relu0/W:0         (81, 64)           float32_ref (mean: -0.0012062492314726114, median: -0.0026974999345839024, std: 0.0891885831952095)
+  param  49: nn/relu0/b:0         (64,)              float32_ref (mean: 0.0               , median: 0.0               , std: 0.0               )
+  param  50: nn/output/W:0        (64, 2)            float32_ref (mean: -0.003403053153306246, median: 0.0006927719805389643, std: 0.08623094856739044)
+  param  51: nn/output/b:0        (2,)               float32_ref (mean: 0.0               , median: 0.0               , std: 0.0               )
+  num of params: 625287
+  layer   0: nn/cnn0/Identity:0   (256, 9, 9, 64)    float32
+  layer   1: nn/norm0/Relu:0      (256, 9, 9, 64)    float32
+  layer   2: nn/res_cnn1_0/Identity:0 (256, 9, 9, 64)    float32
+  layer   3: nn/res_norm1_0/Relu:0 (256, 9, 9, 64)    float32
+  layer   4: nn/res_cnn2_0/Identity:0 (256, 9, 9, 64)    float32
+  layer   5: nn/res_norm2_0/Relu:0 (256, 9, 9, 64)    float32
+  layer   6: nn/res_cnn1_1/Identity:0 (256, 9, 9, 64)    float32
+  layer   7: nn/res_norm1_1/Relu:0 (256, 9, 9, 64)    float32
+  layer   8: nn/res_cnn2_1/Identity:0 (256, 9, 9, 64)    float32
+  layer   9: nn/res_norm2_1/Relu:0 (256, 9, 9, 64)    float32
+  layer  10: nn/res_cnn1_2/Identity:0 (256, 9, 9, 64)    float32
+  layer  11: nn/res_norm1_2/Relu:0 (256, 9, 9, 64)    float32
+  layer  12: nn/res_cnn2_2/Identity:0 (256, 9, 9, 64)    float32
+  layer  13: nn/res_norm2_2/Relu:0 (256, 9, 9, 64)    float32
+  layer  14: nn/cnn1/Identity:0   (256, 9, 9, 1)     float32
+  layer  15: nn/norm1/Relu:0      (256, 9, 9, 1)     float32
+  layer  16: nn/flatten0:0        (256, 81)          float32
+  layer  17: nn/relu0/Relu:0      (256, 64)          float32
+  layer  18: nn/output/Identity:0 (256, 2)           float32
+   learning_rate: 0.000100
+   batch_size: 256
+Epoch 0 of 101 took 93.389777s
+   train loss: 0.693077
+   train acc: 0.504104
+   val loss: 0.693142
+   val acc: 0.502504
+[*] nn0.npz saved
+Epoch 5 of 101 took 92.362892s
+   train loss: 0.692171
+   train acc: 0.520795
+   val loss: 0.693571
+   val acc: 0.497526
+[*] nn5.npz saved
+Epoch 10 of 101 took 91.183785s
+   train loss: 0.676152
+   train acc: 0.575812
+   val loss: 0.702906
+   val acc: 0.497827
+[*] nn10.npz saved
+Epoch 15 of 101 took 92.288678s
+   train loss: 0.622451
+   train acc: 0.653884
+   val loss: 0.741760
+   val acc: 0.499679
+[*] nn15.npz saved
+Epoch 20 of 101 took 97.709192s
+   train loss: 0.541445
+   train acc: 0.726400
+   val loss: 0.821104
+   val acc: 0.501923
+[*] nn20.npz saved
+Epoch 25 of 101 took 91.451354s
+   train loss: 0.459954
+   train acc: 0.781929
+   val loss: 0.948870
+   val acc: 0.501442
+[*] nn25.npz saved
+Epoch 30 of 101 took 91.388713s
+   train loss: 0.389425
+   train acc: 0.823295
+   val loss: 1.110986
+   val acc: 0.499760
+[*] nn30.npz saved
+Epoch 35 of 101 took 97.428958s
+   train loss: 0.331727
+   train acc: 0.855701
+   val loss: 1.264171
+   val acc: 0.500561
+[*] nn35.npz saved
+Epoch 40 of 101 took 99.395725s
+   train loss: 0.276363
+   train acc: 0.882094
+   val loss: 1.528051
+   val acc: 0.502033
+[*] nn40.npz saved
+Epoch 45 of 101 took 99.271574s
+   train loss: 0.242949
+   train acc: 0.897164
+   val loss: 1.787015
+   val acc: 0.497997
+[*] nn45.npz saved
+Epoch 50 of 101 took 97.858852s
+   train loss: 0.206458
+   train acc: 0.915218
+   val loss: 1.984455
+   val acc: 0.500090
+[*] nn50.npz saved
+Epoch 55 of 101 took 98.312333s
+   train loss: 0.188297
+   train acc: 0.923559
+   val loss: 2.144568
+   val acc: 0.499599
+[*] nn55.npz saved
+Epoch 60 of 101 took 98.278287s
+   train loss: 0.162870
+   train acc: 0.934905
+   val loss: 2.369659
+   val acc: 0.499800
+[*] nn60.npz saved
+Epoch 65 of 101 took 98.334442s
+   train loss: 0.148706
+   train acc: 0.940089
+   val loss: 2.706680
+   val acc: 0.498468
+[*] nn65.npz saved
+Epoch 70 of 101 took 98.216310s
+   train loss: 0.133534
+   train acc: 0.947355
+   val loss: 2.777606
+   val acc: 0.500280
+[*] nn70.npz saved
+Epoch 75 of 101 took 97.988780s
+   train loss: 0.126114
+   train acc: 0.951064
+   val loss: 2.880585
+   val acc: 0.501212
+[*] nn75.npz saved
+Epoch 80 of 101 took 98.650986s
+   train loss: 0.109919
+   train acc: 0.958094
+   val loss: 3.082807
+   val acc: 0.499279
+[*] nn80.npz saved
+Epoch 85 of 101 took 99.360743s
+   train loss: 0.104448
+   train acc: 0.959470
+   val loss: 3.371259
+   val acc: 0.498928
+[*] nn85.npz saved
+Epoch 90 of 101 took 98.258262s
+   train loss: 0.094137
+   train acc: 0.964216
+   val loss: 3.502957
+   val acc: 0.499269
+[*] nn90.npz saved
+Epoch 95 of 101 took 96.102105s
+   train loss: 0.093630
+   train acc: 0.964072
+   val loss: 3.600764
+   val acc: 0.498407
+[*] nn95.npz saved
+Epoch 100 of 101 took 99.522357s
+   train loss: 0.081229
+   train acc: 0.969466
+   val loss: 3.729714
+   val acc: 0.497847
+[*] nn100.npz saved
+Evaluation
+   test loss: 3.704289
+   test acc: 0.501603
