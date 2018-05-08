@@ -21,7 +21,7 @@ class AntiazGame(Game):
 
     def getActionSize(self):
         # return number of actions
-        return self.n*self.n + 1
+        return self.n*self.n
 
     def getNextState(self, board, player, action):
         # if player takes action on board, return next (board,player)
@@ -41,7 +41,6 @@ class AntiazGame(Game):
         b.pieces = np.copy(board)
         legalMoves =  b.get_legal_moves(player)
         if len(legalMoves)==0:
-            valids[-1]=1
             return np.array(valids)
         for x, y in legalMoves:
             valids[self.n*x+y]=1
@@ -65,11 +64,10 @@ class AntiazGame(Game):
         return player*board
 
     def getSymmetries(self, board, pi):
-        # mirror, rotational
-        assert(len(pi) == self.n**2+1)  # 1 for pass
-        pi_board = np.reshape(pi[:-1], (self.n, self.n))
+        assert(len(pi) == self.n**2)
+        pi_board = np.reshape(pi, (self.n, self.n))
         l = []
-        return [(board, list(pi_board.ravel()) + [pi[-1]])]
+        return [(board, list(pi_board.ravel()))]
 
     def stringRepresentation(self, board):
         # 8x8 numpy array (canonical board)
