@@ -32,7 +32,7 @@ class minimax(base):
         return bestval, bestx, besty
 
     def play(self, color):
-        return self.search(8, color)
+        return self.search(1, color)
 
 def test():
     game = minimax(4)
@@ -79,8 +79,13 @@ def benchmark():
             win_minimax += 1
     print(win_random, win_minimax)
 
-#benchmark()
+benchmark()
 #1000 games, 9x9 board
 #random 97:903 minimax(depth=9)
 #random 119:881 minimax(depth=8)
-
+#random 128:872 minimax(depth=7)
+#random 140:860 minimax(depth=6)
+#random 196:804 minimax(depth=5)
+#random 224:776 minimax(depth=4)
+#random 304:696 minimax(depth=3)
+#random 381:619 minimax(depth=2)
