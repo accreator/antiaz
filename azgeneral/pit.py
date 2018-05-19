@@ -20,7 +20,7 @@ rp = RandomPlayer(g).play
 # nnet players
 n1 = NNet(g)
 n1.load_checkpoint('./temp/','best.pth.tar')
-args1 = dotdict({'numMCTSSims': 720, 'cpuct':1.0})
+args1 = dotdict({'numMCTSSims': 24, 'cpuct':1.0})
 mcts1 = MCTS(g, n1, args1)
 n1p = lambda x: np.argmax(mcts1.getActionProb(x, temp=0))
 
@@ -32,7 +32,7 @@ n1p = lambda x: np.argmax(mcts1.getActionProb(x, temp=0))
 #n2p = lambda x: np.argmax(mcts2.getActionProb(x, temp=0))
 
 arena = Arena.Arena(n1p, rp, g, display=display)
-print(arena.playGames(20, verbose=True))
+print(arena.playGames(100, verbose=True))
 
 
 #random 27:73 sim120

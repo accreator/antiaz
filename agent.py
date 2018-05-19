@@ -1,6 +1,8 @@
 from random import shuffle
 from base import base
 
+MINIMAX_DEPTH = 9
+
 class random(base):
     def play(self, color):
         empty = [pos for pos in range(self.N**2) if self.board[pos] == 0]
@@ -32,7 +34,7 @@ class minimax(base):
         return bestval, bestx, besty
 
     def play(self, color):
-        return self.search(1, color)
+        return self.search(MINIMAX_DEPTH, color)
 
 def test():
     game = minimax(4)
