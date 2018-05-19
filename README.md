@@ -13,15 +13,15 @@ Resnet
 ======
 * To generate the data for training, run the following in Python
 
-	from data import DATA
-	data = DATA(9) #board size is 9x9
-	data.gen("trn", 800000) #800000 positions for training
-	data.gen("vld", 100000) #100000 positions for validation
-	data.gen("tst", 100000) #100000 positions for testing
+    from data import DATA
+    data = DATA(9) #board size is 9x9
+    data.gen("trn", 800000) #800000 positions for training
+    data.gen("vld", 100000) #100000 positions for validation
+    data.gen("tst", 100000) #100000 positions for testing
 
 * After generating the data, run the following command to train the resnet
 
-	python resnet.py
+    python resnet.py
 
 AlphaZero General
 =================
