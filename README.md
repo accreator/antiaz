@@ -1,4 +1,8 @@
-The code is written in Python 3.6
+In this project we designed a game **AntiAZ**, which is hard for AlphaZero. our high level idea is to define the goal of the game as the parity of a specially-designed hash code of the final position so that neural networks are unable to even understand what kind of final positions is win/lose. 
+
+![alt text](https://github.com/accreator/antiaz/raw/master/rule.png)
+
+The code is written in Python 3.6.
 
 Minimax vs Random
 =================
